@@ -22,16 +22,31 @@
 
 			<div ng-app ng-controller="UserController">
 				<center>
-					<table border="1" class="table">
+					<h1>User Registration Form</h1>
+					<table border="0" class="table">
 						<thead>
+							<th>First Name</th>
 							<th><input placeholder="Enter First Name"
 								ng-model="user.firstName" /></th>
-							<th><input placeholder="Enter Last Name"
-								ng-model="user.lastName" /></th>
-							<th><input type="button" ng-click="addUser()" value="Add" />
-							</th>
+							<th></th>
 							<th></th>
 						</thead>
+						<thead>
+							<th>Last Name</th>
+							<th><input placeholder="Enter Last Name"
+								ng-model="user.lastName" /></th>
+							<th></th>
+							<th></th>
+						</thead>
+						<thead>
+							<th></th>
+							<th><input type="button" ng-click="addUser()" value="Add User" /></th>
+							<th></th>
+							<th></th>
+						</thead>
+					</table>
+					<table border="1" class="table">
+
 						<thead>
 							<th>
 								<center>
@@ -86,10 +101,11 @@
 
 		</div>
 		<div id="button"></div>
-	</div>
-	<div id="footer">
 		<p class="muted credit">Created By My CRUD Maker.</p>
 	</div>
+	<!-- <div id="footer">
+		
+	</div> -->
 
 
 </body>
