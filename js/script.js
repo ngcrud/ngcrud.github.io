@@ -66,12 +66,14 @@ function UserController($scope) {
 			lastName : user.lastName
 		};
 		$scope.createCookie("users", $scope.users, 340);
+		localStorage.setItem("ngCRUDusers", JSON.stringify($scope.users));
 	};
 	$scope.deleteUser = function(user) {
 		if (confirm("Are you sure?")) {
 			$scope.users.splice($scope.users.indexOf(user), 1);
 		}
 		$scope.createCookie("users", $scope.users, 340);
+		localStorage.setItem("ngCRUDusers", JSON.stringify($scope.users));
 	};
 	$scope.createCookie = function(name, value, days) {
 		var expires = "";
