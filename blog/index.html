@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<title>Angular JS CRUD</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+	<script src='../js/jquery.min.js'></script>
+	<script
+		src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.1/angular.min.js'></script>
+	<script
+		src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.1/angular-animate.js'></script>
+	<script src='../js/blog.js'></script>
+
+	<div class="container">
+		<div id="container" class="well">
+
+			<div ng-app ng-controller="BlogController">
+				<center>
+					<h1>A New Blog</h1>
+					<table border="0" class="table">
+						<thead>
+							<th>Headline</th>
+							<th><input placeholder="Enter Headline"
+								ng-model="blog.headline" /></th>
+							<th></th>
+							<th></th>
+						</thead>
+						<thead>
+							<th>Blog Details</th>
+							<th><input placeholder="Enter Blog Details"
+								ng-model="blog.blogDetails" /></th>
+							<th></th>
+							<th></th>
+						</thead>
+						<thead>
+							<th></th>
+							<th><input type="button" ng-click="addBlog()"
+								value="Add User" /></th>
+							<th></th>
+							<th></th>
+						</thead>
+					</table>
+					<table border="1" class="table">
+
+						<thead>
+							<th>
+								<center>
+									<input placeholder="Search By Headline" style=''
+										ng-model="searchText.headline" />
+								</center>
+							</th>
+							<th>
+								<center>
+									<input placeholder="Search By Blog Details" style=''
+										ng-model="searchText.blogDetails" />
+								</center>
+							</th>
+							<th><select ng-model="sortColumn">
+									<option value="">Order By</option>
+									<option value="+headline">Headline ASC</option>
+									<option value="+blogDetails">Blog Details ASC</option>
+									<option value="-headline">Headline DESC</option>
+									<option value="-blogDetails">Blog Details DESC</option>
+							</select></th>
+							<th><input type="number" size="5" ng-model="rowLimit" /> <input
+								type="checkbox" ng-model="exactMatch" />Exact Match</th>
+						</thead>
+						<thead>
+							<th style="cursor: pointer;" ng-click="sortData('headline')">Headline
+								<div ng-class="getSortClass('headline')"></div>
+							</th>
+							<th style="cursor: pointer;" ng-click="sortData('blogDetails')">Blog Details
+								<div ng-class="getSortClass('blogDetails')"></div>
+							</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</thead>
+
+						<tr
+							ng-repeat="blog in blogList | limitTo:rowLimit | orderBy:sortColumn:reverseSort | filter:searchText:exactMatch">
+							<td>{{ blog.headline | uppercase}}</td>
+							<td>{{ blog.blogDetails }}</td>
+							<td><input type="button" value="Edit"
+								class="btn btn-warning" ng-click="editBlog(blog)" /></td>
+							<td><input type="button" value="Delete"
+								class="btn btn-success" ng-click="deleteBlog(blog)" /></td>
+						</tr>
+					</table>
+				</center>
+
+			</div>
+			<p class="muted credit">Created By My CRUD Maker.</p>
+		</div>
+		<div id="button"></div>
+	</div>
+	<!-- <div id="footer">
+		
+	</div> -->
+
+
+</body>
+
+</html>
