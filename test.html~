@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<title>jQuery UI Directive | AngularJS</title>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" type="text/css" media="all" />
+<style type="text/css">
+
+    * {
+        margin:0px;
+        padding:0px;
+    }
+
+    html, body {
+        font-size:16px;
+    }
+
+    body {
+        font-family:Helvetica, Arial, sans-serif;
+        line-height:1.5;
+        color:#777;
+        background-color:#fafafa;
+    }
+
+    body > section {
+        margin:0rem auto;
+        width:90%;
+    }
+
+    h1 {
+        padding:2rem 0rem 2rem 1rem;
+        font-size:2rem;
+        font-weight:lighter;
+        color:#999;
+    }
+
+    body > section dl {
+        margin:0rem 2rem;
+    }
+
+    body > section dl dd {
+        margin:1.5rem 0rem;
+        width:24%;
+    }
+
+    ui-spinner {
+        margin-left:1.5rem;
+    }
+
+    #button-open-dialog {
+        cursor:pointer;
+        border:none;
+        padding:1rem 2rem;
+        font-size:1.25rem;
+        color:#FFF;
+        text-shadow:-1px -1px 1px rgba(0, 0, 0, 0.2);
+        background-color:#999;
+
+        -webkit-transition:background-color 1s ease 0s;
+           -moz-transition:background-color 1s ease 0s;
+             -o-transition:background-color 1s ease 0s;
+                transition:background-color 1s ease 0s;
+    }
+
+    #button-open-dialog:hover {
+        background-color:#CCC;
+    }
+
+    #button-open-dialog:active {
+        -webkit-box-shadow:0px 1px 1px 1px rgba(0, 0, 0, 0.2) inset;
+           -moz-box-shadow:0px 1px 1px 1px rgba(0, 0, 0, 0.2) inset;
+             -o-box-shadow:0px 1px 1px 1px rgba(0, 0, 0, 0.2) inset;
+    }
+
+    #spinner-value {
+        font-size:1rem;
+        font-weight:normal;
+        color:#999;
+    }
+
+    button, input, a {
+        outline:none;
+    }
+
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+<script>
+<!--
+    (function() {
+
+        var app = angular.module('app', []);
+
+        app.directive('uiSlider', ['$timeout', function($timeout) {
+            return {
+                restrict : 'EA',
+                template : '<div id="slider-value"></div>',
+                link     : function(scope, iElement, iAttrs, controller, iTransclude) {
+                    var value   = iAttrs.value;
+                    var min     = iAttrs.min;
+                    var max     = iAttrs.max;
+                    var step    = iAttrs.step;
+                    var range   = iAttrs.range   || 'min';
+                    var animate = iAttrs.animate || 'slow';
+
+                    var updateModel = function(value) {
+                        scope.value = value;
+                        $('#spinner-value').spinner('value', scope.value);
+                    };
+
+                    $(iElement).children('div').slider({
+                        value   : parseFloat(value),
+                        min     : parseFloat(min),
+                        max     : parseFloat(max),
+                        step    : parseFloat(step),
+                        range   : range,
+                        animate : animate,
+                        change  : function(event, ui) {
+                            $timeout(function() {
+                                updateModel(parseFloat(ui.value));
+                            });
+                        },
+                        slide   : function(event, ui) {
+                            $timeout(function() {
+                                updateModel(parseFloat(ui.value));
+                            });
+                        }
+                    });
+                }
+            };
+        }]);
+
+        app.directive('uiSpinner', ['$timeout', function($timeout) {
+            return {
+                restrict : 'EA',
+                template : '<input id="spinner-value" />',
+                link     : function(scope, iElement, iAttrs, controller, iTransclude) {
+                    var value   = iAttrs.value;
+                    var min     = iAttrs.min;
+                    var max     = iAttrs.max;
+                    var step    = iAttrs.step;
+
+                    $(iElement).children('input').spinner({
+                        min  : parseFloat(min),
+                        max  : parseFloat(max),
+                        step : parseFloat(step),
+                        spin : function(event, ui) {
+                            $timeout(function() {
+                                scope.value = parseFloat(ui.value);
+                                $('#slider-value').slider('option', 'value', scope.value);
+                            });
+                        }
+                    }).spinner('value', parseFloat(value));
+                }
+            };
+        }]);
+
+        app.directive('uiDialog', ['$timeout', function($timeout) {
+            return {
+                restrict   : 'EA',
+                template   : '<div ng-transclude></div>',
+                transclude : true,
+                link       : function(scope, iElement, iAttrs, controller, iTransclude) {
+
+                    $(iElement).dialog({
+                        title     : 'jQuery UI Dialog',
+                        autoOpen  : false,
+                        show      : 'explode',
+                        hide      : 'explode',
+                        modal     : true,
+                        width     : 600,
+                        height    : 'auto',
+                        draggable : true,
+                        resizable : false,
+                        zIndex    : 999999,
+                        buttons   : {
+                            'OK' : function() {
+                                $(this).dialog('close');
+                            }
+                        }
+                    });
+
+                    $('#button-open-dialog').on('click', function() {
+                        $(iElement).dialog('open');
+                    });
+                }
+            };
+        }]);
+
+        app.controller('UIController', ['$scope', '$timeout', function($scope, $timeout) {
+            $scope.value   = 1.0;
+            $scope.message = 'Dialog Message !! Current value is ';
+        }]);
+    })();
+//-->
+</script>
+</head>
+
+
+<body>
+    <section ng-controller="UIController">
+        <h1>jQuery UI Directive</h1>
+        <dl>
+            <dt>Value <ui-spinner value="{{ value }}" min="0" max="1" step="0.05"></ui-spinner></dt>
+            <dd><ui-slider value="{{ value }}" min="0" max="1" step="0.05"></ui-slider></dd>
+        </dl>
+        <dl>
+            <dt><ui-dialog>{{ message }}{{ value }}</ui-dialog></dt>
+            <dd><button type="button" id="button-open-dialog">Dialog</button></dd>
+        </dl>
+    </section>
+</body>
+</html>
+

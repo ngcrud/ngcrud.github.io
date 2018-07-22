@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<title>My Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<script src='js/jquery.min.js'></script>
+	<script
+		src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.1/angular.min.js'></script>
+	<script
+		src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.1/angular-animate.js'></script>
+	<script src='js/script.js'></script>
+
+	<div class="container">
+		<div id="container" class="well">
+
+			<div ng-app ng-controller="LoginController">
+				<input placeholder="First Name" size="5" ng-model="user.firstName" />
+				<input placeholder="Last Name" size="5" style='width: "20px"'
+					ng-model="user.lastName" /> <input type="button"
+					ng-click="addUser()" value="Add" /> <input type="number" size="5"
+					ng-model="rowLimit" /> <select ng-model="sortColumn">
+					<option value="">Order By</option>
+					<option value="+firstName">First Name ASC</option>
+					<option value="+lastName">Last Name ASC</option>
+					<option value="-firstName">First Name DESC</option>
+					<option value="-lastName">Last Name DESC</option>
+				</select> <input placeholder="Search First Name" size="5"
+					style='width: "20px"' ng-model="searchText.firstName" /> <input
+					placeholder="Search Last Name" size="5" style='width: "20px"'
+					ng-model="searchText.lastName" /> <input type="checkbox"
+					ng-model="exactMatch" />Exact Match
+				<center>
+					<table border="1" class="table">
+						<thead>
+							<th style="cursor: pointer;" ng-click="sortData('firstName')">First
+								Name
+								<div ng-class="getSortClass('firstName')"></div>
+							</th>
+							<th style="cursor: pointer;" ng-click="sortData('lastName')">Last
+								Name
+								<div ng-class="getSortClass('lastName')"></div>
+							</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</thead>
+						<tr
+							ng-repeat="user in users | limitTo:rowLimit | orderBy:sortColumn:reverseSort | filter:searchText:exactMatch">
+							<td>{{ user.firstName | uppercase}}</td>
+							<td>{{ user.lastName }}</td>
+							<td><input type="button" value="Edit" class="btn btn-warning"
+								ng-click="editUser(user)" /></td>
+							<td><input type="button" value="Delete" class="btn btn-success"
+								ng-click="deleteUser(user)" /></td>
+						</tr>
+					</table>
+				</center>
+
+			</div>
+
+
+
+		</div>
+		<div id="button"></div>
+	</div>
+	<div id="footer">
+		<p class="muted credit">Created By My CRUD Maker.</p>
+	</div>
+
+
+</body>
+
+</html>
