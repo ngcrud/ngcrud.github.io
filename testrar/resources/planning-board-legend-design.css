@@ -1,0 +1,94 @@
+.float-left{
+	float:left;
+	margin:1px;
+}
+
+.ready{
+ 	width: 10px;
+    padding: 1px;
+    border-color: rgb(58,132,195);
+    height: 10px;
+    background: rgb(58,132,195);
+    float:left;
+    margin:1px;
+}
+.future{
+ 	width: 10px;
+    padding: 1px;
+    border-color: rgb(247,228,56);
+    height: 10px;
+    background: rgb(247,228,56);
+    float:left;
+    margin:1px;
+}
+.running{
+ 	width: 10px;
+    padding: 1px;
+    border-color: rgb(80,193,58);
+    height: 10px;
+    background: rgb(80,193,58);
+    float:left;
+    margin:1px;
+}
+.complete{
+ 	width: 10px;
+    padding: 1px;
+    border-color: rgb(193,58,193);
+    height: 10px;
+    background: rgb(193,58,193);
+    float:left;
+    margin:1px;
+}
+.fail{
+ 	width: 10px;
+    padding: 1px;
+    border-color: rgb(196,58,58);
+    height: 10px;
+    background: rgb(196,58,58);
+    float:left;
+    margin:1px;
+}
+.actionRectangle{
+width: 10px;
+    padding: 1px ;
+    border:1px solid black;
+    height: 10px;
+    float:left;
+    margin:1px;
+}
+/*newly added*/
+#hide{
+ //position:absolute;
+}
+#hide{
+ background-color:#e6ffff;
+}
+#show{
+ background-color:#e6ffff;
+}
+.prottayJGrid td {
+    border: 0 solid #1c7f59;
+}
+.prottayJGrid thead tr th {
+    border-left: 1px solid #1c7f59;
+    border-right: 0px solid #1c7f59;
+    border-top: 0px solid #1c7f59;
+    
+}
+#totalNotifications {
+    background: none repeat scroll 0 0;
+    border-radius: 1px;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 8px;
+    margin-top: 8px;
+    padding: 0px 0px;
+    position: absolute;
+}
+#tabs{
+  font-color:black;
+}
+#tabs ul li a{
+  color:white;
+}

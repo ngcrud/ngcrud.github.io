@@ -1,2 +1,2 @@
-# ngcrud.github.io
-Angular JS CRUD Maker
+# planning-pro.github.io
+Planning Application
