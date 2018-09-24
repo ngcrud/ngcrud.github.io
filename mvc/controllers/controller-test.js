@@ -1,12 +1,5 @@
-(function() {
-	'use strict';
-	angular.module('myApp').controller('TestController',TestController);
-
-	TestController.$inject = [ '$scope' ];
-
-	function TestController($scope) {
-		$scope.welcomeMessage = 'Welcome to AngularJS';
-
+var app = angular.module("myApp", ["ngRoute"]);
+app.controller('UserController', function ($scope) {
 	$scope.firstRow = 15;
 	$scope.rowLimit = 15;
 	$scope.sortColumn = '+firstName';
@@ -107,5 +100,4 @@
 		createCookie(name, "", -1);
 	};
 
-    }
-})();
+});

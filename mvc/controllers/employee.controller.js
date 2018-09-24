@@ -61,8 +61,7 @@
 		}
 	} ]);
 
-	angular.module('myApp').controller('EmployeeController',
-			EmployeeController);
+	angular.module('myApp').controller('EmployeeController',EmployeeController);
 
 	EmployeeController.$inject = [ '$http' ];
 
@@ -104,7 +103,7 @@
 			//getAll();
 			//getUserLogins();
 			//getEmployeeTypes();
-            alert('from employee');
+            //alert('from employee');
 
 		}
 

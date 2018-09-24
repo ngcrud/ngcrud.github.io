@@ -8,14 +8,15 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/css/style.css">
 <link rel="stylesheet" href="resources/css/design.css">
+<script src='resources/js/jquery.min.js'></script>
+<!--script src='resources/js/angular.min.js'></script-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<!--script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular-animate.js'></script-->
+
 </head>
 
 <body ng-app="myApp">
-	<script src='resources/js/jquery.min.js'></script>
-	<script src='resources/js/angular.min.js'></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular-animate.js'></script>
-	
 	<div class="container"  class="well">
 		<p><a href="#!" class="btn btn-info">Angular CRUD</a></p>
 
@@ -29,10 +30,11 @@
 	<div id="footer">
 		<p class="muted credit">Created By My CRUD Maker.</p>		
 	</div>
-	<script src='mvc/controllers/employee.controller.js'></script>
+	<script src='mvc/controllers/app.route.js'></script>
+	
+	<script src='mvc/controllers/usermanagement.js'></script>
 	<script src='mvc/controllers/employee.controller.js'></script>
 	<script src='mvc/controllers/test.controller.js'></script>	
-	<script src='mvc/controllers/app.route.js'></script>
 </body>
 
 </html>

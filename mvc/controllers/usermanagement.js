@@ -1,7 +1,11 @@
+(function() {
+	'use strict';
+	angular.module('myApp').controller('UserController',UserController);
 
-var app = angular.module('myApp', []);
+	UserController.$inject = [ '$scope' ];
 
-app.controller('UserController','$scope', function ($scope) {
+	function UserController($scope) {
+		
 	$scope.firstRow = 15;
 	$scope.rowLimit = 15;
 	$scope.sortColumn = '+firstName';
@@ -102,4 +106,5 @@ app.controller('UserController','$scope', function ($scope) {
 		createCookie(name, "", -1);
 	};
 
-});
+    }
+})();

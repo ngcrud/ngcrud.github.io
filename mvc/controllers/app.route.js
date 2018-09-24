@@ -2,8 +2,7 @@ var app = angular.module("myApp", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "mvc/views/home.html",
-        controller  : 'TestController'
+        templateUrl : "mvc/views/home.html"
     })
     .when("/employee", {
         templateUrl : "mvc/views/employee.html",
@@ -15,10 +14,13 @@ app.config(function($routeProvider) {
     })
     .when("/user", {
         templateUrl : "mvc/views/user.html",
-        controller  : 'UserController'
+        controller  : 'UserController'  
     })
-    .otherwise({
+    .otherwise({ redirectTo: '/' });
+});
+/*
+.otherwise({
         templateUrl : "mvc/views/pageNotFound.html",
         controller  : 'UserController'
     });
-});
+*/

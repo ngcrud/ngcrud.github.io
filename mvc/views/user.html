@@ -62,8 +62,7 @@
                 <th>Delete</th>
             </thead>
 
-            <tr
-                ng-repeat="user in users | limitTo:rowLimit | orderBy:sortColumn:reverseSort | filter:searchText:exactMatch">
+            <tr ng-repeat="user in users | limitTo:rowLimit | orderBy:sortColumn:reverseSort | filter:searchText:exactMatch">
                 <td>{{ user.firstName | uppercase}}</td>
                 <td>{{ user.lastName }}</td>
                 <td><input type="button" value="Edit"
@@ -74,5 +73,4 @@
         </table>
     </center>
 
-</div>
 </div>
