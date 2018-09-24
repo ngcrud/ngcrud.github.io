@@ -2,18 +2,23 @@ var app = angular.module("myApp", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "home.html"
+        templateUrl : "home.html",
+        controller  : 'UserController'
     })
     .when("/employee", {
-        templateUrl : "employee.html"
+        templateUrl : "employee.html",
+        controller  : 'EmployeeController'
     })
     .when("/salary", {
-        templateUrl : "salary.html"
+        templateUrl : "salary.html",
+        controller  : 'UserController'
     })
     .when("/user", {
-        templateUrl : "user.html"
+        templateUrl : "user.html",
+        controller  : 'UserController'
     })
     .otherwise({
-        templateUrl : "pageNotFound.html"
+        templateUrl : "pageNotFound.html",
+        controller  : 'UserController'
     });
 });

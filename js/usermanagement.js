@@ -1,5 +1,6 @@
 
-function UserController($scope) {
+var app = angular.module('myApp', []);
+app.controller('UserController', function ($scope) {
 	$scope.firstRow = 15;
 	$scope.rowLimit = 15;
 	$scope.sortColumn = '+firstName';
@@ -100,4 +101,4 @@ function UserController($scope) {
 		createCookie(name, "", -1);
 	};
 
-}
+});
