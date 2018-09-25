@@ -5,6 +5,6 @@
 	HomeController.$inject = [ '$scope' ];
 
 	function HomeController($scope) {
-		$scope.welcomeMessage = 'Welcome to AngularJS';
+		$scope.welcomeMessage = 'Welcome to AngularJS MVC';
     }
 })();
