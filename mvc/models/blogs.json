@@ -1,0 +1,19 @@
+{   
+    "headerMessage": "Welcome To Angular CRUD Application",
+    "welcomeMessage": "Welcome To Daily Blog.",
+    "authors": [
+        {"name": "author1"},
+        {"name": "author2"},
+        {"name": "author3"}
+    ],
+    "categories": [
+        {"categoryName": "category one"},
+        {"categoryName": "category two"},
+        {"categoryName": "category three"}
+    ],
+    "blogs": [
+        {"blogHeadline": "blog1"},
+        {"blogHeadline": "blog2"},
+        {"blogHeadline": "blog3"}
+    ]
+}
