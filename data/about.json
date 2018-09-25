@@ -1,0 +1,10 @@
+{
+    "array": [
+        {"thing": "thing1"},
+        {"thing": "thing2"},
+        {"thing": "thing3"}
+    ],
+
+    "welcomeMessage": "Welcome To AngularJS .",
+    "headerMessage": "Welcome To Angular CRUD Application"
+}
