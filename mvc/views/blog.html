@@ -1,7 +1,35 @@
-<div>
-        <h1>{{headerMessage}}</h1>
-        <h3>{{welcomeMessage}}</h3>
-        <p>Authors: {{authors}}</p>
-        <p>Categories: {{categories}}</p>
-        <p>Blogs: {{blogs}}</p>
-</div>
+      
+        <div class="row well">
+                <div class="col-sm-9">
+                                <h1>{{headerMessage}}</h1>
+                        
+                </div> 
+                <div class="col-sm-3">
+                                <h3>{{welcomeMessage}}</h3>
+                </div>
+        </div>
+       
+        <div class="row">
+                <div class="col-sm-9">
+                        <h1 class="well">Blogs</h1>
+                        <div class="well" ng-repeat="blog in blogs">
+                                <h1>{{blog.headline}}</h1>
+                                <p>{{blog.details}}</p>
+                                by <i>{{blog.author}}</i>, 
+                                <b>categories:</b> <i ng-repeat="category in blog.categories">{{category.category}},</i> 
+                                <p ng-repeat="comment in blog.comments">{{comment.comment}} - by {{comment.commentBy}}</p>
+                        </div>
+                </div>
+                <div class="col-sm-3">
+                        <h1 class="well">Authors</h1>
+                        <span ng-repeat="author in authors">
+                                {{author.name}}, 
+                        </span>
+                        <h1 class="well">Categories</h1>
+                        <span ng-repeat="category in categories">
+                                {{category.categoryName}}, 
+                        </span>
+                </div>
+        </div>
+        
+

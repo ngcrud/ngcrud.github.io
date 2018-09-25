@@ -7,7 +7,12 @@
 	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
 	<link rel="stylesheet" href="resources/css/style.css">
 	<link rel="stylesheet" href="resources/css/design.css">
-
+<style>
+body { padding-top: 40px; }
+@media screen and (max-width: 768px) {
+    body { padding-top: 0px; }
+}
+</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular-animate.js'></script>
@@ -16,15 +21,37 @@
 <body ng-app="myApp">
 		
 	<div class="container"  class="well">
-		<p><a href="#!" class="btn btn-info">Angular CRUD</a></p>
-
-		<a href="#!blog" class="btn btn-success">Blog</a>
-		<a href="#!employee" class="btn btn-success">Employee</a>
-		<a href="#!salary" class="btn btn-success">Salary</a>
-		<a href="#!user" class="btn btn-success">User</a>
-		<a href="#!about" class="btn btn-success">About</a>
-		<a href="#!kjsdfkl" class="btn btn-danger">Page Not Found</a>
 		
+			<nav class="navbar navbar-default navbar-fixed-top">
+					<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<div class="navbar-header">
+							<a class="navbar-brand" href="#">NG CRUD</a>
+							</div>
+						</div>
+						<div id="navbar" class="navbar-collapse collapse">
+								<div class="container-fluid">
+										<ul class="nav navbar-nav">
+										<li class="active"><a href="#">Home</a></li>
+										<li><a href="#!blog" >Blog</a></li>
+										<li><a href="#!employee" >Employee</a></li>
+										<li><a href="#!salary" >Salary</a></li>
+										<li><a href="#!user" >User</a></li>
+										<li><a href="#!kjsdfkl" >Page Not Found</a></li>
+										</ul>
+										<ul class="nav navbar-nav navbar-right">		
+										<li><a href="#!about" >About</a></li>
+										<li><a href="#!contact" >Contact</a></li>
+										</ul>
+									</div>
+						</div>
+					
+					</nav>
 		<div ng-view></div>
 	</div>
 	<div id="footer">
@@ -38,6 +65,7 @@
 	<script src='mvc/controllers/about.controller.js'></script>
 	<script src='mvc/controllers/employee.controller.js'></script>
 	<script src='mvc/controllers/home.controller.js'></script>	
+	<script src='mvc/controllers/contact.controller.js'></script>	
 </body>
 
 </html>

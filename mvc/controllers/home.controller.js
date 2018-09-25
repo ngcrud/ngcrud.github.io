@@ -5,6 +5,7 @@
 	HomeController.$inject = [ '$scope' ];
 
 	function HomeController($scope) {
+		$scope.headerMessage = 'Welcome to NG CRUD';
 		$scope.welcomeMessage = 'Welcome to AngularJS MVC';
     }
 })();
