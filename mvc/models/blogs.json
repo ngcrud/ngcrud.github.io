@@ -12,8 +12,61 @@
         {"categoryName": "category three"}
     ],
     "blogs": [
-        {"blogHeadline": "blog1"},
-        {"blogHeadline": "blog2"},
-        {"blogHeadline": "blog3"}
+        {
+            "author": "author1",
+            "headline": "blog1",
+            "details": "details1",
+            "categories": [
+                {"category":"category1"},
+                {"category":"category2"}
+            ],
+            "comments": [
+                {
+                    "comment":"comment1",
+                    "commentBy":"commentBy"
+                },
+                {
+                    "comment":"comment2",
+                    "commentBy":"commentBy"
+                }
+            ]
+        },
+        {   "author": "author1",
+            "headline": "blog2",
+            "details": "details2",
+            "categories": [
+                {"category":"category1"},
+                {"category":"category3"}
+            ],
+            "comments": [
+                {
+                    "comment":"comment1",
+                    "commentBy":"commentBy"
+                },
+                {
+                    "comment":"comment2",
+                    "commentBy":"commentBy"
+                }
+            ]
+        },
+        {   "author": "blog1",
+            "headline": "blog1",
+            "details": "details3",
+            "categories": [
+                {"category":"category1"},
+                {"category":"category2"},
+                {"category":"category3"}
+            ],
+            "comments": [
+                {
+                    "comment":"comment1",
+                    "commentBy":"commentBy"
+                },
+                {
+                    "comment":"comment2",
+                    "commentBy":"commentBy"
+                }
+            ]
+        }
     ]
 }
