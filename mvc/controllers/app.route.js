@@ -43,6 +43,10 @@ app.config(function($routeProvider) {
         templateUrl : "mvc/views/contact.html",
         controller  : 'ContactController'  
     })
+    .when("/modal", {
+        templateUrl : "mvc/views/modal.html",
+        controller  : 'ModalController'  
+    })
     .otherwise({
         templateUrl : "mvc/views/pageNotFound.html",
         controller  : 'HomeController'  

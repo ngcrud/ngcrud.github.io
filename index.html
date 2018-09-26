@@ -16,6 +16,16 @@ body { padding-top: 40px; }
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular-animate.js'></script>
+
+	<link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/libs.min.css">
+    <link rel="stylesheet" href="//mgcrea.github.io/angular-strap/styles/docs.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <!--script src="https://cdn.jsdelivr.net/angularjs/1.5.5/angular.min.js" data-semver="1.5.5"></script-->
+    <script src="https://cdn.jsdelivr.net/angularjs/1.5.5/angular-animate.min.js" data-semver="1.5.5"></script>
+    <script src="https://cdn.jsdelivr.net/angularjs/1.5.5/angular-sanitize.min.js" data-semver="1.5.5"></script>
+    <script src="https://mgcrea.github.io/angular-strap/dist/angular-strap.js" data-semver="v2.3.8"></script>
+    <script src="https://mgcrea.github.io/angular-strap/dist/angular-strap.tpl.js" data-semver="v2.3.8"></script>
+    <script src="https://mgcrea.github.io/angular-strap/docs/angular-strap.docs.tpl.js" data-semver="v2.3.8"></script>
 </head>
 
 <body ng-app="myApp">
@@ -39,7 +49,8 @@ body { padding-top: 40px; }
 							<ul class="nav navbar-nav">
 								<li ng-class="{ active: isActive('/') }"><a href="#">Home</a></li>
 								<li ng-class="{ active: isActive('/blog') }"><a href="#!blog" >Blog</a></li>
-									
+								<li ng-class="{ active: isActive('/modal') }"><a href="#!modal" >Modal</a></li>
+
 								<li ng-class="{ active: isActive('/employee')||isActive('/salary')||isActive('/user') }" class="dropdown">
 										<a class="dropdown-toggle" data-toggle="dropdown" href="#">HR
 										<span class="caret"></span></a>
@@ -79,6 +90,7 @@ body { padding-top: 40px; }
 	<script src='mvc/controllers/home.controller.js'></script>	
 	<script src='mvc/controllers/contact.controller.js'></script>	
 	<script src='mvc/controllers/menu.controller.js'></script>	
+	<script src='mvc/controllers/modal.controller.js'></script>	
 </body>
 
 </html>
