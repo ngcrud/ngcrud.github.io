@@ -26,7 +26,7 @@
 		//localStorage.setItem("ngCRUDusers", $scope.users);
 		localStorage.setItem("ngCRUDusers", JSON.stringify($scope.users));
 	}else{
-		console.log(localStorageUsers);
+		//console.log(localStorageUsers);
 		var parsed = JSON.parse(localStorageUsers);
 		//console.log(parsed);
 		$scope.users = parsed;
@@ -47,7 +47,7 @@
 		
 		var localStorageUsers = localStorage.getItem("ngCRUDusers");		
 		var parsed = JSON.parse(localStorageUsers);
-		console.log(parsed);
+		//console.log(parsed);
 		//$scope.users = parsed;
 		
 		var values = $scope.readCookie("users");

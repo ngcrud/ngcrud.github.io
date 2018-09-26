@@ -1,4 +1,18 @@
 var app = angular.module("myApp", ["ngRoute"]);
+
+app.run(['$rootScope','$templateCache',function($rootScope, $templateCache) {
+    $rootScope.$on('$routeChangeStart', function() {
+       $templateCache.removeAll();
+    });
+ }]);
+ /*app.run(['$rootScope','$templateCache', 'locationHistoryService', function($rootScope,$location, locationHistoryService){
+    $rootScope.$on('$routeChangeStart', function() {
+        $templateCache.removeAll();
+     });
+    $rootScope.$on('$locationChangeSuccess', function(e, newLocation, oldLocation){
+        locationHistoryService.store(oldLocation);
+    });
+}]);*/
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
