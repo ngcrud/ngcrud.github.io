@@ -22,36 +22,47 @@ body { padding-top: 40px; }
 		
 	<div class="container"  class="well">
 		
-			<nav ng-controller="MenuController" class="navbar navbar-default navbar-fixed-top">
+		<nav ng-controller="MenuController" class="navbar navbar-expand-sm navbar-default navbar-fixed-top">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
 					<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<div class="navbar-header">
-							<a class="navbar-brand" href="#">NG CRUD</a>
-							</div>
-						</div>
-						<div id="navbar" class="navbar-collapse collapse">
-								<div class="container-fluid">
-										<ul class="nav navbar-nav">
-										<li ng-class="{ active: isActive('/') }"><a href="#">Home</a></li>
-										<li ng-class="{ active: isActive('/blog') }"><a href="#!blog" >Blog</a></li>
-										<li ng-class="{ active: isActive('/employee') }"><a href="#!employee" >Employee</a></li>
-										<li ng-class="{ active: isActive('/salary') }"><a href="#!salary" >Salary</a></li>
-										<li ng-class="{ active: isActive('/user') }"><a href="#!user" >User</a></li>
-										<li ng-class="{ active: isActive('/kjsdfkl') }"><a href="#!kjsdfkl" >Page Not Found</a></li>
+					<a class="navbar-brand" href="#">NG CRUD</a>
+					</div>
+				</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<div class="container-fluid">
+							<ul class="nav navbar-nav">
+								<li ng-class="{ active: isActive('/') }"><a href="#">Home</a></li>
+								<li ng-class="{ active: isActive('/blog') }"><a href="#!blog" >Blog</a></li>
+									
+								<li ng-class="{ active: isActive('/employee')||isActive('/salary')||isActive('/user') }" class="dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#">HR
+										<span class="caret"></span></a>
+										<ul class="dropdown-menu">
+										  <li><a href="#!employee" >Employee</a></li>
+										  <li><a href="#!salary" >Salary</a></li>
+										  <li><a href="#!user" >User</a></li>
 										</ul>
-										<ul class="nav navbar-nav navbar-right">		
-										<li ng-class="{ active: isActive('/about') }"><a href="#!about" >About</a></li>
-										<li ng-class="{ active: isActive('/contact') }"><a href="#!contact" >Contact</a></li>
-										</ul>
-									</div>
+									  </li>
+								<!--li ng-class="{ active: isActive('/employee') }"><a href="#!employee" >Employee</a></li>
+								<li ng-class="{ active: isActive('/salary') }"><a href="#!salary" >Salary</a></li>
+								<li ng-class="{ active: isActive('/user') }"><a href="#!user" >User</a></li-->
+								<li ng-class="{ active: isActive('/kjsdfkl') }"><a href="#!kjsdfkl" >Page Not Found</a></li>
+								
+							</ul>
+								<ul class="nav navbar-nav navbar-right">		
+								<li ng-class="{ active: isActive('/about') }"><a href="#!about" >About</a></li>
+								<li ng-class="{ active: isActive('/contact') }"><a href="#!contact" >Contact</a></li>
+							</ul>
 						</div>
+				</div>
 					
-					</nav>
+		</nav>
 		<div ng-view></div>
 	</div>
 	<div id="footer">
@@ -59,6 +70,7 @@ body { padding-top: 40px; }
 	</div>
 	<script src='resources/js/jquery.min.js'></script>
 	<script src='resources/js/bootstrap.min.js'></script>
+
 	<script src='mvc/controllers/app.route.js'></script>
 	<script src='mvc/controllers/user.controller.js'></script>
 	<script src='mvc/controllers/blog.controller.js'></script>
